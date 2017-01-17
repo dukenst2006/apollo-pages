@@ -4,8 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "7384bf4071f8ae401e3116d538a9c640",
-    "content-hash": "91f862b08c36fb2b9f8e3212bb1c80ac",
+    "content-hash": "0a980e7bc93c761c9909b90b2deb7032",
     "packages": [
         {
             "name": "doctrine/inflector",
@@ -276,20 +275,20 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/http.git",
-                "reference": "bf439d3903f16e79b35d61231f52f3d30e7f160f"
+                "reference": "399ca765e1f89c628d77c2ec235b65fac0ed6f3c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/illuminate/http/zipball/bf439d3903f16e79b35d61231f52f3d30e7f160f",
-                "reference": "bf439d3903f16e79b35d61231f52f3d30e7f160f",
+                "url": "https://api.github.com/repos/illuminate/http/zipball/399ca765e1f89c628d77c2ec235b65fac0ed6f3c",
+                "reference": "399ca765e1f89c628d77c2ec235b65fac0ed6f3c",
                 "shasum": ""
             },
             "require": {
                 "illuminate/session": "5.4.*",
                 "illuminate/support": "5.4.*",
                 "php": ">=5.6.4",
-                "symfony/http-foundation": "3.2.*",
-                "symfony/http-kernel": "3.2.*"
+                "symfony/http-foundation": "~3.2",
+                "symfony/http-kernel": "~3.2"
             },
             "type": "library",
             "extra": {
@@ -314,7 +313,7 @@
             ],
             "description": "The Illuminate Http package.",
             "homepage": "https://laravel.com",
-            "time": "2016-11-02 14:30:09"
+            "time": "2016-12-23 19:33:04"
         },
         {
             "name": "illuminate/pipeline",
@@ -622,7 +621,7 @@
                 "pseudorandom",
                 "random"
             ],
-            "time": "2016-11-07 23:38:38"
+            "time": "2016-11-07T23:38:38+00:00"
         },
         {
             "name": "psr/log",
@@ -1329,7 +1328,7 @@
                 "object",
                 "object graph"
             ],
-            "time": "2016-10-31 17:19:45"
+            "time": "2016-10-31T17:19:45+00:00"
         },
         {
             "name": "phpdocumentor/reflection-common",
@@ -1428,7 +1427,7 @@
                 }
             ],
             "description": "With this component, a library can provide support for annotations via DocBlocks or otherwise retrieve information that is embedded in a DocBlock.",
-            "time": "2016-09-30 07:12:33"
+            "time": "2016-09-30T07:12:33+00:00"
         },
         {
             "name": "phpdocumentor/type-resolver",
@@ -1475,7 +1474,7 @@
                     "email": "me@mikevanriel.com"
                 }
             ],
-            "time": "2016-06-10 07:14:17"
+            "time": "2016-06-10T07:14:17+00:00"
         },
         {
             "name": "phpspec/prophecy",
@@ -1689,7 +1688,7 @@
             "keywords": [
                 "template"
             ],
-            "time": "2015-06-21 13:50:34"
+            "time": "2015-06-21T13:50:34+00:00"
         },
         {
             "name": "phpunit/php-timer",
@@ -1733,7 +1732,7 @@
             "keywords": [
                 "timer"
             ],
-            "time": "2016-05-12 18:03:57"
+            "time": "2016-05-12T18:03:57+00:00"
         },
         {
             "name": "phpunit/php-token-stream",
@@ -1923,7 +1922,7 @@
                 "mock",
                 "xunit"
             ],
-            "time": "2016-10-09 07:01:45"
+            "time": "2016-10-09T07:01:45+00:00"
         },
         {
             "name": "sebastian/code-unit-reverse-lookup",
@@ -2252,7 +2251,7 @@
             "keywords": [
                 "global state"
             ],
-            "time": "2015-10-12 03:26:01"
+            "time": "2015-10-12T03:26:01+00:00"
         },
         {
             "name": "sebastian/object-enumerator",

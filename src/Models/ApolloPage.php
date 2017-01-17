@@ -38,44 +38,44 @@ class ApolloPage extends Model
      */
     public static function assignProcessedAttributes($request)
     {
-        $request['slug'] = static::assignSlugAttribute($request);
+        $request['slug'] = static::makeSlug($request->input('slug'), $request->input('title'));
 
-        $request['path'] = static::assignPathAttribute($request);
+        $request['path'] = static::makePath($request->input('slug'), $request->input('parent_id'));
 
-        $request['tier'] = static::assignTierAttribute($request);
+        $request['tier'] = static::makeTier($request->input('parent_id'));
 
         return $request;
     }
 
     /**
-     * Assign path attribute based on slug and if page contains a parent id.
+     * Make path based on slug and specified page id if present.
      *
-     * @param  \Illuminate\Http\Request $request
+     * @param  string $slug
+     * @param  string $parentId
      * @return string
      */
-    public static function assignPathAttribute($request)
+    public static function makePath($slug, $parentId = null)
     {
-        $parent = static::where('id', $request->input('parent_id'))->first();
+        $parent = static::where('id', $parentId)->first();
 
         if ($parent) {
-            return $parent->path.'/'.$request->input('slug');
+            return $parent->path.'/'.$slug;
         }
 
-        return $request->input('slug');
+        return $slug;
     }
 
     /**
-     * Assign slug attirbute based on provided value or the page title.
+     * Make slug based on title or specified value.
      *
-     * @param  \Illuminate\Http\Request $request
+     * @param  string $value
+     * @param  string $title
      * @return string
      */
-    public static function assignSlugAttribute($request)
+    public static function makeSlug($title, $value = null)
     {
-        $value = $request->input('slug');
-
         if (empty($value)) {
-            $value = $request->input('title');
+            $value = $title;
         }
 
         return str_slug($value);
@@ -84,12 +84,12 @@ class ApolloPage extends Model
     /**
      * Assign tier attribute based on whether page is nested under a parent page.
      *
-     * @param  \Illuminate\Http\Request $request
+     * @param  string $parentId
      * @return int
      */
-    public static function assignTierAttribute($request)
+    public static function makeTier($parentId)
     {
-        $parent = static::where('id', $request->input('parent_id'))->first();
+        $parent = static::where('id', $parentId)->first();
 
         if ($parent) {
             return $parent->tier + 1;

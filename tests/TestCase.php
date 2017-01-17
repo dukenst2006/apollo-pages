@@ -6,6 +6,8 @@ abstract class TestCase extends PHPUnit_Framework_TestCase
 {
     /**
      * Setup the test case data persistance layer.
+     *
+     * @return void
      */
     public function setUp()
     {
@@ -14,7 +16,9 @@ abstract class TestCase extends PHPUnit_Framework_TestCase
     }
 
     /**
-     * Setup the in-memory database.
+     * Setup the in-memory database for testing.
+     *
+     * @return void
      */
     protected function setUpDatabase()
     {
@@ -32,7 +36,15 @@ abstract class TestCase extends PHPUnit_Framework_TestCase
     {
         DB::schema()->create('pages', function ($table) {
             $table->increments('id');
+
+            $table->string('slug')->index();
+            $table->string('path')->unique();
+            $table->integer('tier');
+            $table->integer('parent_id')->nullable();
+
             $table->string('title');
+            $table->text('body')->nullable();
+            $table->text('body_html')->nullable();
             $table->timestamps();
         });
     }
